@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — InputForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161d;
+      --surface2: #1a1e28;
+      --border: #252a38;
+      --accent: #4f8fff;
+      --accent2: #7c5fff;
+      --text: #e2e6f0;
+      --text-muted: #7a82a0;
+      --text-dim: #4a5068;
+      --green: #3dd68c;
+      --red: #ff5f7e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(79,143,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,143,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Header */
+    header {
+      padding: 48px 0 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
+    .logo-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 5vw, 48px);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .badge.green { border-color: rgba(61,214,140,0.3); color: var(--green); }
+    .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    /* Intro card */
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 56px;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 52px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .section-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(79,143,255,0.1);
+      border: 1px solid rgba(79,143,255,0.2);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin: 28px 0 12px;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    /* Data items list */
+    .data-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .data-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .data-list li .label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text);
+      white-space: nowrap;
+      min-width: 160px;
+    }
+
+    /* Not collected list */
+    .not-collected {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      list-style: none;
+    }
+
+    .not-collected li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 13px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .not-collected li::before {
+      content: '✕';
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead tr {
+      background: var(--surface2);
+    }
+
+    th {
+      text-align: left;
+      padding: 11px 16px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 12px 16px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    td:first-child {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover td {
+      background: var(--surface);
+    }
+
+    /* API block */
+    .api-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .api-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .api-row:last-child { border-bottom: none; }
+
+    .api-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      min-width: 100px;
+    }
+
+    .api-value {
+      color: var(--text-muted);
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .api-value.normal {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+    }
+
+    /* Accessibility numbered list */
+    .numbered-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .numbered-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 13px 16px;
+    }
+
+    .num-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: rgba(79,143,255,0.15);
+      border: 1px solid rgba(79,143,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .num-content strong {
+      font-weight: 500;
+      color: var(--text);
+      display: block;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .num-content span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Warning box */
+    .notice {
+      background: rgba(61,214,140,0.06);
+      border: 1px solid rgba(61,214,140,0.2);
+      border-radius: 8px;
+      padding: 13px 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .notice-icon {
+      color: var(--green);
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Delete steps */
+    .delete-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .delete-steps li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .delete-steps li:last-child { border-bottom: none; }
+
+    .step-arrow {
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    /* Contact */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+
+    .contact-email {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+
+    .contact-btn:hover { opacity: 0.85; }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin: 0;
+    }
+
+    @media (max-width: 580px) {
+      .data-list li { flex-direction: column; gap: 4px; }
+      .data-list li .label { min-width: unset; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <header>
+    <div class="logo-row">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9h2v2H6zm10 0h2v2h-2zM3 5h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-3-2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+        </svg>
+      </div>
+      <span class="logo-name">InputForge</span>
+    </div>
+
+    <h1>Privacy <span>Policy</span></h1>
+
+    <div class="meta-row">
+      <span class="badge">Last updated: March 20, 2026</span>
+      <span class="badge green"><span class="dot"></span>No data collected</span>
+      <span class="badge">Android App</span>
+    </div>
+  </header>
+
+  <div class="intro-card">
+    InputForge is a gamepad remapping application for Android. This policy explains what data the App stores, how it is used, and your rights. The short version: everything stays on your device.
+  </div>
+
+  <!-- Section 1 -->
+  <section>
+    <h2><span class="section-num">01</span> Data Stored on Your Device</h2>
+    <p>All App data is stored exclusively on your device. There are no user accounts, cloud sync, or remote databases.</p>
+
+    <ul class="data-list">
+      <li><span class="label">Controller profiles</span> Button remapping configs, analog stick, trigger, gyro settings, action layers, action sets, and macros — stored as JSON in Android DataStore.</li>
+      <li><span class="label">App preferences</span> Cheat sheet overlay settings (mode, opacity, panel visibility), first-launch flag, and UI preferences — stored in Android DataStore.</li>
+      <li><span class="label">Entitlement data</span> Whether the Pro upgrade has been purchased and gyro trial usage (session count, start date) — stored in Android DataStore.</li>
+      <li><span class="label">ADB credentials</span> Security keys used to authenticate with your device's wireless debugging interface. Generated on-device and never transmitted externally.</li>
+      <li><span class="label">Shell helper metadata</span> Technical data used to manage the App's background service — stored in SharedPreferences.</li>
+      <li><span class="label">Service log</span> A local debugging log capped at 50 KB, stored in the App's private file directory.</li>
+    </ul>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2><span class="section-num">02</span> Data Not Collected</h2>
+    <p>The App does not collect, store, or transmit any of the following:</p>
+
+    <ul class="not-collected">
+      <li>Personal information</li>
+      <li>Device identifiers</li>
+      <li>Location data</li>
+      <li>Contacts or calendar</li>
+      <li>Photos or media</li>
+      <li>Browsing history</li>
+      <li>Analytics or telemetry</li>
+      <li>Crash reports</li>
+      <li>IMEI or serial number</li>
+      <li>Advertising ID</li>
+    </ul>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2><span class="section-num">03</span> Network Communications</h2>
+
+    <h3>Steam Workshop API</h3>
+    <p>The App may connect to the Steam Web API (Valve Corporation) to fetch controller configurations when explicitly requested by the user. No personal data is transmitted.</p>
+
+    <h3>Local Shell Helper</h3>
+    <p>The App communicates with its on-device shell helper over localhost TCP (port 38291). This is strictly device-internal — no data leaves your device through this channel.</p>
+
+    <div class="notice">
+      <span class="notice-icon">✓</span>
+      The App contains no analytics SDKs, advertising libraries, crash reporting services, or telemetry of any kind.
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2><span class="section-num">04</span> Permissions</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Accessibility Service</td>
+            <td>Intercepts gamepad button events for remapping, detects foreground app for automatic profile switching, and reads the wireless debugging pairing code during setup. Does not read personal content from other apps.</td>
+          </tr>
+          <tr>
+            <td>Internet</td>
+            <td>Used solely to fetch Steam Workshop configs when you explicitly request an import.</td>
+          </tr>
+          <tr>
+            <td>Foreground Service</td>
+            <td>Keeps the input remapping pipeline active while the App is in the background.</td>
+          </tr>
+          <tr>
+            <td>Post Notifications</td>
+            <td>Shows a persistent notification while remapping is active, and displays the ADB pairing code during setup (Android 13+).</td>
+          </tr>
+          <tr>
+            <td>System Alert Window</td>
+            <td>Displays the cheat sheet and radial menu overlays on top of other apps.</td>
+          </tr>
+          <tr>
+            <td>Query All Packages</td>
+            <td>Lists installed apps so you can associate controller profiles with specific games.</td>
+          </tr>
+          <tr>
+            <td>Access Network State</td>
+            <td>Checks Wi-Fi connectivity status during wireless debugging setup.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section>
+    <h2><span class="section-num">05</span> Accessibility Service Disclosure</h2>
+    <p>The Accessibility Service is used for three specific purposes:</p>
+
+    <ul class="numbered-list">
+      <li>
+        <span class="num-badge">1</span>
+        <div class="num-content">
+          <strong>Intercept gamepad key events</strong>
+          <span>The core mechanism that enables button remapping when the shell helper is not active.</span>
+        </div>
+      </li>
+      <li>
+        <span class="num-badge">2</span>
+        <div class="num-content">
+          <strong>Detect foreground app changes</strong>
+          <span>Allows automatic profile switching when you open a different game.</span>
+        </div>
+      </li>
+      <li>
+        <span class="num-badge">3</span>
+        <div class="num-content">
+          <strong>Read the pairing code</strong>
+          <span>During one-time wireless debugging setup, reads the 6-digit pairing code from Android's Developer Settings to streamline pairing.</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="notice" style="margin-top:16px;">
+      <span class="notice-icon">✓</span>
+      The Accessibility Service does <strong style="color:var(--text);">&nbsp;not&nbsp;</strong> read, collect, store, or transmit the content of other apps, text fields, passwords, messages, or any personal information.
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section>
+    <h2><span class="section-num">06</span> Third-Party Services</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Data Shared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Steam Web API (Valve)</td>
+            <td>Fetching public controller configs from Steam Workshop</td>
+            <td>Only the numeric Workshop file ID, sent when you initiate an import</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:14px;">No other third-party services, SDKs, or libraries that collect or transmit user data are included in the App.</p>
+  </section>
+
+  <!-- Section 7 -->
+  <section>
+    <h2><span class="section-num">07</span> In-App Purchases</h2>
+    <p>The App offers a Pro upgrade through Google Play. Purchase transactions are handled entirely by Google Play and are subject to <a href="https://policies.google.com/privacy" style="color:var(--accent);">Google's Privacy Policy</a>. The App only stores a local flag indicating whether the Pro upgrade has been purchased.</p>
+  </section>
+
+  <!-- Section 8 -->
+  <section>
+    <h2><span class="section-num">08</span> Children's Privacy</h2>
+    <p>The App does not knowingly collect any personal information from children under 13. The App does not contain advertising, social features, or user accounts.</p>
+  </section>
+
+  <!-- Section 9 -->
+  <section>
+    <h2><span class="section-num">09</span> Data Deletion</h2>
+    <p>All data is stored locally on your device. You can delete everything at any time:</p>
+
+    <ul class="delete-steps">
+      <li><span class="step-arrow">→</span> Android Settings → Apps → InputForge → Storage → Clear Data</li>
+      <li><span class="step-arrow">→</span> Uninstall the App</li>
+    </ul>
+
+    <p style="margin-top:14px;">No data is retained on any external server.</p>
+  </section>
+
+  <!-- Section 10 -->
+  <section>
+    <h2><span class="section-num">10</span> Changes to This Policy</h2>
+    <p>If this privacy policy is updated, the revised version will be published on this page with an updated date. Continued use of the App after changes constitutes acceptance of the revised policy.</p>
+  </section>
+
+  <!-- Section 11 -->
+  <section>
+    <h2><span class="section-num">11</span> Contact</h2>
+    <div class="contact-card">
+      <div>
+        <div class="contact-label">Questions about this policy?</div>
+        <div class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="432a2d333637252c31242622333303242e222a2f6d202c2e">[email&#160;protected]</a></div>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#86efe8f6f3f2e0e9f4e1e3e7f6f6c6e1ebe7efeaa8e5e9eb" class="contact-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send Email
+    
